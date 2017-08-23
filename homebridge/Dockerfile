@@ -4,8 +4,7 @@ MAINTAINER Franck Nijhof <frenck@geekchimp.com>
 
 # Add env
 ENV LANG="C.UTF-8"
-ENV TZ=Asia/Shanghai
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # Copy run file
 COPY files/run.sh /
 
@@ -26,7 +25,6 @@ RUN apk add --no-cache jq git python make g++ libffi-dev openssl-dev dbus \
       homebridge@0.4.27 \
       homebridge-homeassistant@2.3.0 \
       homebridge-config-ui \
-      homebridge-broadlink-rm \
       homebridge-mi-aqara && \
     chmod a+x /run.sh
 
